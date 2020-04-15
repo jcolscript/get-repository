@@ -5,6 +5,7 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: none;
   }
 
   html, body, #root {
@@ -12,7 +13,7 @@ export default createGlobalStyle`
   }
 
   body{
-    background: #7159c1;
+    background: #5063F0;
     -webkit-font-smoothing: antialiased !important
   }
 
