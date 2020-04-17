@@ -25,6 +25,7 @@ export default class Main extends Component {
 
     this.setState({
       repositories: [repository, ...this.state.repositories],
+      newRepo: '',
     });
   };
   render() {
