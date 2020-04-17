@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FaGithubAlt, FaPlus, FaSpinner } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 import api from '../../services/api';
 
@@ -40,7 +41,6 @@ export default class Main extends Component {
     const { data } = await api.get(`/repos/${this.state.newRepo}`);
     const repository = {
       id: data.id,
-      name: data.name,
       full_name: data.full_name,
     };
 
@@ -77,7 +77,11 @@ export default class Main extends Component {
           {this.state.repositories.map((repository) => (
             <li key={repository.id}>
               <span>{repository.full_name}</span>
-              <a href="#">Detalhes</a>
+              <Link
+                to={`/repository/${encodeURIComponent(repository.full_name)}`}
+              >
+                Detalhes
+              </Link>
             </li>
           ))}
         </List>
