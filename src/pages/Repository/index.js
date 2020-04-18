@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import api from '../../services/api';
 
+import Container from '../../components/Container';
+
 export default class Repository extends Component {
   static propTypes = {
     match: PropTypes.shape({
@@ -39,6 +41,7 @@ export default class Repository extends Component {
   }
 
   render() {
-    return <h1>Repository</h1>;
+    const { repository, issues, loading } = this.state;
+    return <Container>Repository</Container>;
   }
 }
